@@ -37,7 +37,7 @@
 			if(!$issues) {
 				Response::result($response, "Presentation record(s) were successfully removed from the table.");
 			} else {
-				Response::result($response, "One or more presentation paths were not found in the table. See 'response' object for more info.");
+				Response::result($response, "One or more presentation paths were not found in the table. See 'presentations' object for more info.");
 			}
 
 		}
