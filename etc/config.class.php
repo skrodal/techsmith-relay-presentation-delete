@@ -3,6 +3,7 @@
 		private static $config = null;
 
 		public static function setDevMode($devMode) {
+			global $config;
 			if($devMode){
 				$config = json_decode(file_get_contents($_SERVER['DOCUMENT_ROOT'] . "service-ecampus-no/etc/techsmith-relay/relay_mysql_presdelete_config_dev.js"), true);
 			} else {
