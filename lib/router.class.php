@@ -17,7 +17,6 @@
 				Response::result($this->router->getRoutes());
 			}, 'Get all routes available');
 
-			$routes = new Routes();
 			//
 			switch($_SERVER['REQUEST_METHOD']) {
 				case 'GET':
