@@ -35,7 +35,8 @@ Scriptet må derfor _flytte_ paths til et midlertidig område på disk som _ikke
                   "username": "simon@uninett.no",
                   "moved": "0",
                   "deleted": "0",
-                  "undelete": "0"
+                  "undelete": "0",
+                  "presId": "0",
                 },
                 {
                   ...osv
@@ -86,7 +87,8 @@ Scriptet må derfor _flytte_ paths til et midlertidig område på disk som _ikke
               "username": "simon@uninett.no",
               "moved": "1",
               "deleted": "0",
-              "undelete": "1"
+              "undelete": "1",
+              "presId": "..."
             }
           ]
         }
@@ -135,7 +137,8 @@ Scriptet må periodisk (døgnlig) sjekke hvilke presentasjoner som ble flyttet >
                   "username": "simon@uninett.no",
                   "moved": "1",
                   "deleted": "0",
-                  "undelete": "0"
+                  "undelete": "0",
+                  "presId": "...",
                 }
               ]
             }

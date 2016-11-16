@@ -140,7 +140,10 @@
 					          moved tinyint(1) unsigned NOT NULL DEFAULT 0,
 					          deleted tinyint(1) unsigned NOT NULL DEFAULT 0,
 					          undelete tinyint(1) unsigned NOT NULL DEFAULT 0,
-					          PRIMARY KEY (id)
+					          presId int(11) NOT NULL,
+					          userId int(11) NOT NULL,
+					          PRIMARY KEY (id),
+  							  UNIQUE KEY presId (presId)
 			        	) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8";
 
 				// Exit on error
@@ -154,11 +157,11 @@
 				// - record 5 has recently been requested to be deleted and has not yet been moved (and cannot be undeleted - user can still cancel in UI)
 				$query = "INSERT INTO $this->tableName (timestamp, path, username, moved, deleted, undelete)
 					VALUES
-					(NOW() - INTERVAL 64 DAY, 'ansatt/simonuninett.no/2016/08.04/12303/', 'simon@uninett.no', 1, 1, 0),	
-					(NOW() - INTERVAL 28 DAY, 'ansatt/simon@uninett.no/2014/03.04/216713/', 'simon@uninett.no', 1, 1, 0),
-					(NOW() - INTERVAL 14 DAY, 'ansatt/simonuninett.no/2014/11.06/186700/', 'simon@uninett.no', 1, 0, 0),
-					(NOW() - INTERVAL 7 DAY, 'ansatt/simonuninett.no/2015/12.04/116700/', 'simon@uninett.no', 1, 0, 1),
-					(NOW() - INTERVAL 1 HOUR, 'ansatt/simonuninett.no/2014/27.09/10333/', 'simon@uninett.no', 0, 0, 0)
+					(NOW() - INTERVAL 64 DAY, 'ansatt/simonuninett.no/2016/08.04/12303/', 'simon@uninett.no', 1, 1, 0, 1231, 509),	
+					(NOW() - INTERVAL 28 DAY, 'ansatt/simon@uninett.no/2014/03.04/216713/', 'simon@uninett.no', 1, 1, 0, 1232, 509),
+					(NOW() - INTERVAL 14 DAY, 'ansatt/simonuninett.no/2014/11.06/186700/', 'simon@uninett.no', 1, 0, 0, 1233, 509),
+					(NOW() - INTERVAL 7 DAY, 'ansatt/simonuninett.no/2015/12.04/116700/', 'simon@uninett.no', 1, 0, 1, 1234, 509),
+					(NOW() - INTERVAL 1 HOUR, 'ansatt/simonuninett.no/2014/27.09/10333/', 'simon@uninett.no', 0, 0, 0, 1235, 509)
 				";
 
 
